@@ -37,6 +37,13 @@ autocmd BufWritePost,BufEnter * Neomake
 autocmd InsertChange,TextChanged * update | Neomake
 
 " Neoforamt setup
+let g:neoformat_javascript_jsbeautify = {
+      \ 'exe': 'js-beautify',
+      \ 'args': ['-s 2', '-X']
+      \ }
+let g:neoformat_enabled_javascript = ['jsbeautify']
+
+" Run Neoformat on file save
 augroup fmt
   autocmd!
   autocmd BufWritePre * Neoformat
