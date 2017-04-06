@@ -32,7 +32,13 @@ endif
 
 
 " Neomake setup
-let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
+if executable('eslint') && executable('flow')
+  let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
+elseif executable('eslint')
+  let g:neomake_javascript_enabled_makers = ['eslint']
+elseif executable('flow')
+  let g:neomake_javascript_enabled_makers = ['flow']
+endif
 autocmd BufWritePost,BufEnter * Neomake
 autocmd InsertChange,TextChanged * update | Neomake
 
