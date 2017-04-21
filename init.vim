@@ -12,6 +12,9 @@ syntax on
 set background=dark
 colorscheme solarized
 
+# brackets matching colors
+hi MatchParen cterm=bold ctermbg=black ctermfg=white
+
 set nobackup
 set nowritebackup
 set noswapfile
@@ -54,5 +57,3 @@ augroup fmt
   autocmd!
   autocmd BufWritePre * Neoformat
 augroup END
-
-hi MatchParen cterm=bold ctermbg=black ctermfg=white
