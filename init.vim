@@ -12,7 +12,7 @@ syntax on
 set background=dark
 colorscheme solarized
 
-# brackets matching colors
+" brackets matching colors
 hi MatchParen cterm=bold ctermbg=black ctermfg=white
 
 set nobackup
