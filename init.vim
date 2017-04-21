@@ -9,7 +9,7 @@ set softtabstop=2 expandtab shiftwidth=2 smarttab
 set laststatus=2
 
 syntax on
-set background=light
+set background=dark
 colorscheme solarized
 
 set nobackup
@@ -54,3 +54,5 @@ augroup fmt
   autocmd!
   autocmd BufWritePre * Neoformat
 augroup END
+
+hi MatchParen cterm=bold ctermbg=black ctermfg=white
