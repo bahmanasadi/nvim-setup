@@ -12,6 +12,8 @@ syntax on
 set background=dark
 colorscheme solarized
 
+if has('mouse') | set mouse=a | endif
+
 " brackets matching colors
 hi MatchParen cterm=bold ctermbg=black ctermfg=white
 
