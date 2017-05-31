@@ -9,7 +9,7 @@ set softtabstop=2 expandtab shiftwidth=2 smarttab
 set laststatus=2
 
 syntax on
-set background=dark
+set background=light
 colorscheme solarized
 
 if has('mouse') | set mouse=a | endif
@@ -37,12 +37,12 @@ endif
 
 
 " Neomake setup
-if executable('eslint') && executable('flow')
+let eslint_exec = $PWD .'/node_modules/.bin/eslint'
+let flow_exec = $PWD .'/node_modules/.bin/flow'
+if executable(eslint_exec) && executable(flow_exec)
+  let g:neomake_javascript_eslint_exe = eslint_exec
+  let g:neomake_javascript_flow_exe = flow_exec
   let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
-elseif executable('eslint')
-  let g:neomake_javascript_enabled_makers = ['eslint']
-elseif executable('flow')
-  let g:neomake_javascript_enabled_makers = ['flow']
 endif
 autocmd BufWritePost,BufEnter * Neomake
 autocmd InsertChange,TextChanged * update | Neomake
