@@ -5,11 +5,11 @@ filetype plugin indent on
 set hlsearch
 set ruler
 set wildmode=longest,list
-set softtabstop=2 expandtab shiftwidth=2 smarttab
+set tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
 set laststatus=2
 
 syntax on
-set background=light
+set background=dark
 colorscheme solarized
 
 if has('mouse') | set mouse=a | endif
@@ -20,6 +20,7 @@ hi MatchParen cterm=bold ctermbg=black ctermfg=white
 set nobackup
 set nowritebackup
 set noswapfile
+set ignorecase
 
 " ctrlp + ag setup
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -47,15 +48,7 @@ endif
 autocmd BufWritePost,BufEnter * Neomake
 autocmd InsertChange,TextChanged * update | Neomake
 
-" Neoforamt setup
-let g:neoformat_javascript_jsbeautify = {
-      \ 'exe': 'js-beautify',
-      \ 'args': ['-s 2', '-X', '-b collapse,preserve-inline']
-      \ }
-let g:neoformat_enabled_javascript = ['jsbeautify']
-
-" Run Neoformat on file save
 augroup fmt
-  autocmd!
-  autocmd BufWritePre * Neoformat
+  let g:prettier#autoformat = 0
+  autocmd BufWritePre *.js,*.css,*.scss,*.less undojoin | Neoformat prettier
 augroup END
