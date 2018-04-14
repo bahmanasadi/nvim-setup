@@ -12,5 +12,5 @@ Once you run the `setup.sh` script, the following plugins will be installed:
 
 If you have `ag` installed, ctrlp will use that instead of the default find command. This enhances your experience greately.
 
-If you are developing javascript, please install prettier and eslint using `yarn add --dev eslint-plugin-prettier eslint-config-prettier` so your code is formated on save. Also installing eslint and flow locally would be detected and used.
+If you are developing javascript, please install prettier and eslint using `yarn add prettier --dev --exact; yarn add --dev eslint-plugin-prettier eslint-config-prettier;` so your code is formated on save. Also installing eslint and flow locally would be detected and used.
 
