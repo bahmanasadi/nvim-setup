@@ -9,4 +9,5 @@ git clone https://github.com/neomake/neomake $bundle/neomake
 git clone https://github.com/ctrlpvim/ctrlp.vim.git $bundle/ctrlp.vim
 git clone https://github.com/sbdchd/neoformat $bundle/neoformat
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git $bundle/syntastic
+git clone https://github.com/leafgarland/typescript-vim.git $bundle/typescript-vim
 cp ./init.vim $nvim/
