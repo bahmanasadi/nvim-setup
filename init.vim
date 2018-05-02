@@ -44,11 +44,17 @@ if executable(eslint_exec) && executable(flow_exec)
   let g:neomake_javascript_eslint_exe = eslint_exec
   let g:neomake_javascript_flow_exe = flow_exec
   let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
+elseif executable(eslint_exec)
+  let g:neomake_javascript_eslint_exe = eslint_exec
+  let g:neomake_javascript_enabled_makers = ['eslint']
+elseif executable(flow_exec)
+  let g:neomake_javascript_flow_exe = flow_exec
+  let g:neomake_javascript_enabled_makers = ['flow']
 endif
 autocmd BufWritePost,BufEnter * Neomake
 autocmd InsertChange,TextChanged * update | Neomake
 
 augroup fmt
   let g:prettier#autoformat = 0
-  autocmd BufWritePre *.js,*.css,*.scss,*.less undojoin | Neoformat prettier
+  autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.scss,*.less undojoin | Neoformat prettier
 augroup END
