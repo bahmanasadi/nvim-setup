@@ -53,6 +53,7 @@ elseif executable(flow_exec)
 endif
 autocmd BufWritePost,BufEnter * Neomake
 autocmd InsertChange,TextChanged * update | Neomake
+autocmd BufEnter *.tsx set filetype=typescript
 
 augroup fmt
   let g:prettier#autoformat = 0
